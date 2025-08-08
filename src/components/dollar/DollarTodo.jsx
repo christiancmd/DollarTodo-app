@@ -42,13 +42,13 @@ function DollarToday() {
 
   const handleUsdToBs = (e) => {
     const number = e.target.value;
-    const op = number > 0 ? number * dollarData.price : "0.00";
+    const op = number > 0 ? (number * dollarData.price).toFixed(2) : "0.00";
     setDollar(op);
   };
 
   const handleBsToUsd = (e) => {
     const number = e.target.value;
-    const op = number > 0 ? number / dollarData.price : "0.00";
+    const op = number > 0 ? (number / dollarData.price).toFixed(2) : "0.00";
     setDollar(op);
   };
 
