@@ -29,18 +29,24 @@ export default function DollarTodo() {
     };
   }, []);
 
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("es-VE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
   const handleUsdToBs = (e) => {
-    const number = e.target.value;
-    const op = number > 0 ? (number * dollarData.price).toFixed(2) : "0.00";
-    setDollar(op);
+    const number = parseFloat(e.target.value);
+    const op = number > 0 ? number * dollarData.price : 0;
+    setDollar(formatCurrency(op));
   };
 
   const handleBsToUsd = (e) => {
-    const number = e.target.value;
-    const op = number > 0 ? (number / dollarData.price).toFixed(2) : "0.00";
-    setDollar(op);
+    const number = parseFloat(e.target.value);
+    const op = number > 0 ? number / dollarData.price : 0;
+    setDollar(formatCurrency(op));
   };
-
   const changeForm = (e) => {
     const formUsdBs = document.getElementById("formUsdBs");
     const formBsUsd = document.getElementById("formBsUsd");
