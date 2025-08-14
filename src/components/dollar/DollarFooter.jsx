@@ -1,4 +1,4 @@
-function DollarFooter({ modeDark, timeClock }) {
+export default function DollarFooter({ modeDark, timeClock }) {
   return (
     <footer
       className={`w-full absolute bottom-0 py-8 px-3 border-b  rounded-sm shadow-lg 
@@ -28,5 +28,3 @@ function DollarFooter({ modeDark, timeClock }) {
     </footer>
   );
 }
-
-export default DollarFooter;
