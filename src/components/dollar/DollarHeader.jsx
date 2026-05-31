@@ -5,12 +5,12 @@ export default function DollarHeader({ dollarData }) {
         <p className="text-gray-500 text-sm">Valor actual del dólar</p>
         <div className="mt-2 text-sm flex items-center flex-col justify-center text-green-500">
           <p className="text-4xl font-bold mt-2 text-blue-800 dark:text-white">
-            {dollarData.price} Bs
+            {dollarData} Bs
           </p>
-          <div>
+          {/* <div>
             {dollarData.symbol} {dollarData.change}%{" "}
             <span className="ml-1">respecto a ayer</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

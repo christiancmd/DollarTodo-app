@@ -8,8 +8,7 @@ export function useFetch(url) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        //console.log("Datos recibidos: ", data);
-        setDollarData(data.monitors.bcv);
+        setDollarData(data.dolar);
         setDateData(data.datetime);
       })
       .catch((error) => {
